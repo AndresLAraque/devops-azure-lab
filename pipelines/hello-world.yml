@@ -1,24 +1,23 @@
 trigger:
-- main
+  - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 
 stages:
-- stage: HelloWorld
-displayName: 'Mi primer pipeline'
-jobs:
-  - job: SaludarJob
-    displayName: 'Imprimir mensaje'
-    steps:
-      - script: echo "Hola! Pipeline Funcionando Correctamente "
-        displayName: 'Paso 1 - Saludo'
+  - stage: HelloWorld
+    displayName: "Mi primer pipeline"
+    jobs:
+      - job: SaludarJob
+        displayName: "Imprimir mensaje"
+        steps:
+          - script: echo "Hola! Pipeline funcionando correctamente"
+            displayName: "Paso 1 - Saludo"
 
-      - script: echo "Repositorio conectado desde Github"
-        displayName: 'Paso 2 - Conformación'
+          - script: echo "Repositorio conectado desde GitHub"
+            displayName: "Paso 2 - Confirmacion"
 
-      - script: |
-          echo "Fecha actual: $(date)"
-          echo "Rama: $(Build.SourceBranchName)"
-          displayName: 'Paso 3 - Info del entorno'
-
+          - script: |
+              echo "Fecha actual: $(date)"
+              echo "Rama: $(Build.SourceBranchName)"
+            displayName: "Paso 3 - Info del entorno"
